@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css?family=McLaren|Source+Sans+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+    height: 20vh;
+    width: 100%;
+}
+
+
+.logo {
+    width: 10%;
+    text-align: center;
+    margin: auto 0;
+}
+
+.searchContainer {
+
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 2.3em;
+    text-align: center;
+
+}
+
+h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+
+
+
+
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+
+
+}
+
+h4 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+
+
+}
+
+.imgContainer {
+    text-align: center;
+    display: block;
+}
+
+
+.searchContainer input[type=text] {
+    height: 40px;
+    width: 280px;
+    padding: 6px;
+    font-size: 17px;
+    /* background: red; */
+}
+
+.searchContainer form {
+    width: 333px;
+    border: 2px solid black;
+}
+
+.searchContainer button {
+    height: 40px;
+    width: 45px;
+    padding: 6px 10px;
+    background: linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    border-left: 2px solid black;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#compareSearch2 {
+    background-color: blue;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.searchContainer button:hover {
+    background: linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+}
+
+.metricContainer {
+    width: 10%;
+    text-align: center;
+    margin: auto 0;
+    position: relative;
+    right: 50px;
+}
+
+.metricContainer button {
+    text-transform: uppercase;
+    height: 35px;
+    width: 160px;
+    font-size: 15px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    color: white;
+}
+
+
+
+.tabs {
+    background-color: red;
+    ;
+    width: max-content;
+    height: 45%;
+    margin-top: 30px;
+    font-size: 15px;
+    padding: 0px;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    border-radius: 60px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #777;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.6s;
+    width: 130px;
+    text-align: center;
+}
+
+.tabs a.active {
+    color: #fff;
+}
+
+.tabs a i {
+    margin-right: 5px;
+}
+
+.selector {
+    height: 100%;
+    display: inline-block;
+    left: 0px;
+    top: 0px;
+    border-radius: 50px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: #05abe0;
+    background: linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+}
+
+.tabcontent {
+    display: none;
+}
+
+main {
+    height: 80vh;
+    width: 100%;
+    display: block;
+}
+
+
+
+
+
+.card {
+    background: linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    height: 490px;
+    width: 340px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 30px;
+}
+
+
+
+hr {
+    color: white;
+}
+
+#chartContent section {
+    border: 2px black solid;
+}
+
+#current,
+#forecast {
+    width: 100%;
+}
+
+#tabsWrapper {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#current {
+    display: block;
+}
+
+#compareSearch {
+    width: 355px;
+    margin: auto;
+}
+
+
+
+#longitude {
+    font-size: 1.3em;
+}
+
+#header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+}
+
+#current .card {
+    -webkit-animation: openforecast 1.6s cubic-bezier(.39, 0, .38, 1);
+}
+
+#forecast .card {
+    -webkit-animation: openforecast 1.6s cubic-bezier(.39, 0, .38, 1);
+}
+
+#compare .card {
+    -webkit-animation: openforecast 1.6s cubic-bezier(.39, 0, .38, 1);
+
+}
+
+#chart1,
+#chart2 {
+    float: left;
+}
+
+
+
+.cardsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardContainer {
+    margin-top: 50px;
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+
+
+
+
+@-webkit-keyframes openforecast {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 490px;
+    }
+}

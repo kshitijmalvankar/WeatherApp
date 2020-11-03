@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="index.css">
+    <script rel="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header-top">
+            <div class="logo">
+                <img src="weather.png" height="60px" width="60px" alt="logo">
+            </div>
+            <div class="searchContainer">
+                <form id="search">
+                    <input type="text" placeholder="Search" value="Athlone" name="search" id="location">
+                    <button type="button" onclick="getUrl();"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="metricContainer">
+                <button type="button" onclick="changeMetrics();" style="cursor: pointer;">Change Metric</button>
+            </div>
+        </div>
+        <div id="tabsWrapper">
+            <nav class="tabs">
+                <div class="selector"></div>
+                <a href="#" onclick="openPage('current', event)" class="tablink">Current</a>
+                <a href="#" onclick="openPage('forecast', event)" class="tablink">Forecast</a>
+                <a href="#" onclick="openPage('compare', event)" class="tablink">Compare</a>
+                <a href="#" onclick="openPage('chart', event)" class="tablink">Charts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="current" class="tabcontent">
+            <div class="card">
+                <div class="row">
+                    <h1 id="cityname"></h1>
+                </div>
+                <span class="imgContainer"><img id="symbol" src=""></span>
+                <h1 id="temperature">°</h1><br>
+                <h3 id="humidity"></h3><br>
+                <h3 id="wind"></h3><br>
+                <h4 id="winddes"></h4><br>
+                <h4 id="winddir"></h4><br>
+                <h3 id="clouds"></h3><br>
+                <hr>
+                <h4 id="longitude"></h4><br>
+            </div>
+        </div>
+
+
+        <div id="forecast" class="tabcontent">
+            <div class="cardsContainer">
+
+
+                <div class="card">
+                    <div id="row">
+                        <h1 id="c1cityname">Brussels</h1>
+                        <h2 id="c1date"> Brussels</h2>
+                    </div>
+                    <h1 id="c1high">23°</h1><br>
+                    <h3 id="c1low"></h3><br>
+                    <h3 id="c1wind"></h3><br>
+                    <h3 id="c1icon"></h3><br>
+                    <h3 id="c1summary"></h3><br>
+                    <hr>
+                    <h4 id="c1longitude"></h4><br>
+                </div>
+
+
+                <div class="card">
+                    <div id="row">
+                        <h1 id="c2cityname">Brussels</h1>
+                        <h2 id="c2date"> Brussels</h2>
+                    </div>
+
+                    <h1 id="c2high">23°</h1><br>
+                    <h3 id="c2low"></h3><br>
+                    <h3 id="c2wind"></h3><br>
+                    <h3 id="c2icon"></h3><br>
+                    <h3 id="c2summary"></h3><br>
+                    <hr>
+                    <h4 id="c2longitude"></h4><br>
+                </div>
+
+
+                <div class="card">
+                    <div id="row">
+                        <h1 id="c3cityname">Brussels</h1>
+                        <h2 id="c3date"> Brussels</h2>
+                    </div>
+                    <h1 id="c3high">23°</h1><br>
+                    <h3 id="c3low"></h3><br>
+                    <h3 id="c3wind"></h3><br>
+                    <h3 id="c3icon"></h3><br>
+                    <h3 id="c3summary"></h3><br>
+                    <hr>
+                    <h4 id="c3longitude"></h4><br>
+                </div>
+
+
+                <div class="card">
+                    <div id="row">
+                        <h1 id="c4cityname">Brussels</h1>
+                        <h2 id="c4date"> Brussels</h2>
+                    </div>
+                    <h1 id="c4high">23°</h1><br>
+                    <h3 id="c4low"></h3><br>
+                    <h3 id="c4wind"></h3><br>
+                    <h3 id="c4icon"></h3><br>
+                    <h3 id="c4summary"></h3><br>
+                    <hr>
+                    <h4 id="c4longitude"></h4><br>
+                </div>
+            </div>
+        </div>
+        <div id="compare" class="tabcontent">
+            <div class="cardContainer">
+                <div class="searchContainer" id="compareSearch2">
+                    <form>
+                        <input type="text" placeholder="Search" value="Pune" name="search" id="location2">
+                        <button type="button" onclick="getUrl();"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="card" id="card1">
+                    <div class="row">
+                        <h1 id="cm1cityname"></h1>
+                    </div>
+                    <span class="imgContainer"><img id="cm1symbol" src=""></span>
+                    <h1 id="cm1temperature">°</h1><br>
+                    <h3 id="cm1humidity"></h3><br>
+                    <h3 id="cm1wind"></h3><br>
+                    <h4 id="cm1winddes"></h4><br>
+                    <h4 id="cm1winddir"></h4><br>
+                    <h3 id="cm1clouds"></h3><br>
+
+                </div>
+            </div>
+            <div class="cardContainer">
+                <div class="searchContainer" id="compareSearch2">
+                    <form>
+                        <input type="text" placeholder="Search" value="Athlone" name="search" id="location3">
+                        <button type="button" onclick="getUrl();"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="card" id="card2">
+                    <div class="row">
+                        <h2 id="cm2cityname"></h2>
+                    </div>
+                    <span class="imgContainer"><img id="cm2symbol" src=""></span>
+                    <h1 id="cm2temperature">°</h1><br>
+                    <h3 id="cm2humidity"></h3><br>
+                    <h3 id="cm2wind"></h3><br>
+                    <h4 id="cm2winddes"></h4><br>
+                    <h4 id="cm2winddir"></h4><br>
+                    <h3 id="cm2clouds"></h3><br>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="chart" class="tabcontent">
+            <div id="chartContainer">
+                <section id="chart1"></section>
+                <section id="chart2"></section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
